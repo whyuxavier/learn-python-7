@@ -1,1 +1,194 @@
-
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python з нуля · 7 клас — безкоштовний курс програмування українською</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236f8ad6'/%3E%3Cstop offset='1' stop-color='%2394a9e6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url%28%23g%29'/%3E%3Cpath d='M30 8c-8 0-10 3-10 6v5h11v3H14c-5 0-7 4-7 9s2 9 7 9h4v-6c0-4 3-7 7-7h10c4 0 6-3 6-6v-7c0-4-4-6-11-6z' fill='%23fff'/%3E%3Cpath d='M30 50c7 0 9-2 9-5v-4H29v-3h11' fill='none' stroke='%23f0c75e' stroke-width='0'/%3E%3Ccircle cx='25' cy='14' r='2' fill='%236f8ad6'/%3E%3Ccircle cx='46' cy='46' r='15' fill='%23f0c75e' stroke='%23fff' stroke-width='3'/%3E%3Cpath d='M39.5 38.5h13l-8 16' fill='none' stroke='%232b2f45' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="description" content="Python — програмування з нуля для 7 класу: безкоштовний інтерактивний курс українською. 21 урок, тренажери, автоперевірка завдань і підсумковий тест, код запускається просто в браузері.">
+<link rel="canonical" href="https://whyuxavier.github.io/learn-python-7/">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6f8ad6">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Python 7 клас">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Python — програмування з нуля · 7 клас">
+<meta property="og:description" content="21 інтерактивний урок Python для 7 класу: алгоритми, змінні, умови, цикли й перші проєкти. Код запускається просто в браузері.">
+<meta property="og:url" content="https://whyuxavier.github.io/learn-python-7/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Python — програмування з нуля · 7 клас","description":"Безкоштовний інтерактивний курс Python українською для 7 класу: 21 урок з теорією, тренажерами, практичними завданнями з автоперевіркою й підсумковим тестом.","inLanguage":"uk","url":"https://whyuxavier.github.io/learn-python-7/","isAccessibleForFree":true,"provider":{"@type":"Person","name":"Олександр Мрочко","url":"https://github.com/whyuxavier"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT35H"},"offers":{"@type":"Offer","price":"0","priceCurrency":"UAH","category":"Free"}}</script>
+<link href="https://fonts.cdnfonts.com/css/fixel-display" rel="stylesheet">
+<script>(()=>{try{const n=navigator,lite=(n.hardwareConcurrency&&n.hardwareConcurrency<=2)||(n.deviceMemory&&n.deviceMemory<=4)||matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(lite)document.documentElement.classList.add('lite')}catch(e){}})();</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+<div class="app">
+<header>
+ <button class="ib" id="menu" aria-label="Меню курсу" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+ <h1><button id="logo" title="На головну">Python з нуля</button></h1>
+ <div class="gsw"><button class="gsb" id="gsb" aria-haspopup="true" aria-expanded="false" aria-controls="gpop" title="Обрати клас">7 клас<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  <nav class="gpop" id="gpop" hidden aria-label="Курси"><a aria-current="page"><b>7 клас</b><span>Перші програми, умови й цикли</span></a><a href="../learn-python/"><b>8 клас</b><span>Основи Python і вікна tkinter</span></a><a href="../learn-python-9/"><b>9 клас</b><span>Списки, словники, файли й ігри</span></a></nav></div>
+ <button class="ib" id="homeBtn" hidden aria-label="На головну" title="На головну"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5"/></svg></button>
+ <button class="ib sch" id="schB" hidden aria-label="Шкільний режим увімкнено" title="Шкільний режим: прогрес зникне після закриття браузера"><svg viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5z"/><path d="M7 12.5V17c0 1.2 2.2 2.5 5 2.5s5-1.3 5-2.5v-4.5"/></svg></button>
+ <button class="ib" id="instB" hidden aria-label="Встановити застосунок" title="Встановити як застосунок"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 7v7M9 11l3 3 3-3M10.5 18.5h3"/></svg></button>
+ <button class="ib" id="info" aria-label="Панель керування" title="Панель керування"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></button>
+</header>
+<aside id="side" aria-label="Навігація курсу">
+ <div class="pc"><span id="pct">0%</span><span id="cnt">0 / 17</span></div>
+ <div class="pb" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="pbar"><i></i></div>
+ <nav id="nav"></nav>
+</aside>
+<main>
+ <section class="col" id="lw" aria-label="Урок"><div class="card lh"><div class="lt" role="tablist" aria-label="Розділ уроку" id="ltabs"><button class="tab" role="tab" id="t-th" data-t="th" aria-controls="p-th">Теорія</button><button class="tab" role="tab" id="t-tk" data-t="tk" aria-controls="p-tk">Завдання</button></div></div><div id="lesson"></div></section>
+ <div class="rz" id="rz" role="separator" aria-orientation="vertical" aria-label="Змінити ширину панелей" tabindex="0"></div>
+ <section class="ws" aria-label="Робоча область">
+  <div class="pane" id="p-ed">
+   <div class="ph">
+    
+    <div class="ftabs" role="tablist" id="ftabs"></div>
+    <span class="grow"></span>
+    <div class="more"><button class="ib" id="more" aria-label="Інші дії" title="Інші дії" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg></button>
+     <div class="mm" id="mm" role="menu" hidden>
+      <button class="mi" id="share" role="menuitem"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Здати роботу</button>
+      <button class="mi" id="copy" role="menuitem"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Скопіювати код</button>
+      <button class="mi" id="dl" role="menuitem"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Завантажити код</button>
+      <button class="mi" id="reset" role="menuitem"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></svg>Почати спочатку</button>
+     </div></div>
+    <button class="btn stop" id="stop" hidden title="Зупинити програму"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg><span>Стоп</span></button>
+    <button class="btn run" id="run" title="Запустити (Ctrl+Enter)"><svg viewBox="0 0 24 24"><path d="M7 5v14l12-7z"/></svg><span id="runTx">Запустити</span></button>
+   </div>
+   <div class="ed"><div id="gut" aria-hidden="true"></div><div class="cw"><div id="eband"></div><pre id="hl" aria-hidden="true"></pre><textarea id="ta" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" aria-label="Код Python"></textarea></div></div>
+  </div>
+  <div class="rzh" id="rzh" role="separator" aria-orientation="horizontal" aria-label="Змінити висоту редактора" tabindex="0"></div>
+  <div class="pane" id="p-out">
+   <div class="ph"><h3 id="outT">Результат</h3>
+    <button class="ib" id="clr" aria-label="Очистити результат" title="Очистити результат"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button></div>
+   <div class="out" id="out"><div class="kp" id="kp" aria-label="Клавіші"></div><div id="wins"></div><div id="con" tabindex="-1" aria-live="polite"></div></div>
+   <div class="pgz" id="pgz" hidden></div>
+  </div>
+ </section>
+</main>
+</div>
+<div id="home">
+<div class="hm">
+ <section class="hero" aria-labelledby="hh">
+  <div>
+   <span class="ebd"><i></i>Інтерактивний курс · 7 клас</span>
+   <h2 id="hh">Програмуй на <span>Python</span> з нуля</h2>
+   <p class="ld">21 урок: від першого алгоритму до власної вікторини. Змінні, умови, цикли, рядки й функції — пиши код у браузері, а курс перевірить його сам.</p>
+   <div class="cta">
+    <button class="btn pr lg" id="start"><span id="startTx">Почати навчання</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <a class="btn lg" href="#program" id="toProg">Програма курсу</a>
+   </div>
+   <div class="hpr" id="hpr" hidden><span id="hprTx"></span><div class="pb"><i id="hprBar"></i></div></div>
+  </div>
+  <div class="hart"><svg class="art" viewBox="0 0 520 400" role="img" aria-label="Блок-схема алгоритму «парне чи непарне» і вікно оболонки IDLE, де той самий алгоритм виконується командами Python">
+ <defs><filter id="hsh" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#3c3c64" flood-opacity=".18"/></filter>
+ <marker id="har" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" class="mu"/></marker></defs>
+ <g class="h-ed">
+  <rect class="w" x="14" y="30" width="258" height="300" rx="13" filter="url(#hsh)"/>
+  <path class="tb" d="M14.5 43a12.5 12.5 0 0 1 12.5-12.5h232a12.5 12.5 0 0 1 12.5 12.5v13h-257z"/>
+  <line class="bl" x1="14.5" y1="56.5" x2="271.5" y2="56.5"/>
+  <circle cx="30" cy="43.5" r="4" fill="#ef8f8f"/><circle cx="43" cy="43.5" r="4" fill="#f3c97a"/><circle cx="56" cy="43.5" r="4" fill="#8fd1bd"/>
+  <text x="72" y="47.5" class="mu" font-size="11">Алгоритм: парне чи непарне?</text>
+  <g class="cl" style="animation-delay:.35s"><rect class="fbx" x="95" y="68" width="96" height="24" rx="12"/><text x="143" y="84" font-size="11" text-anchor="middle">Початок</text></g>
+  <g class="cl" style="animation-delay:.6s"><path class="fln" d="M143 92v14" marker-end="url(#har)"/><path class="fbx" d="M102 110h92l-10 26h-92z"/><text x="143" y="127" class="mono sm" text-anchor="middle">ввести n</text></g>
+  <g class="cl" style="animation-delay:.85s"><path class="fln" d="M143 136v14" marker-end="url(#har)"/><path class="fdm" d="M143 152l58 28-58 28-58-28z"/><text x="143" y="184" class="mono sm" text-anchor="middle">n % 2 == 0</text></g>
+  <g class="cl" style="animation-delay:1.15s"><path class="fln" d="M85 180H64v42" marker-end="url(#har)"/><text x="70" y="174" font-size="10.5" class="okt" font-weight="600">так</text><rect class="fbx" x="28" y="226" width="72" height="26" rx="4"/><text x="64" y="243" class="mono sm" text-anchor="middle">парне</text></g>
+  <g class="cl" style="animation-delay:1.4s"><path class="fln" d="M201 180h21v42" marker-end="url(#har)"/><text x="203" y="174" font-size="10.5" class="ert" font-weight="600">ні</text><rect class="fbx" x="180" y="226" width="84" height="26" rx="4"/><text x="222" y="243" class="mono sm" text-anchor="middle">непарне</text></g>
+  <g class="cl" style="animation-delay:1.65s"><path class="fln" d="M64 252v18h158v-18M143 270v14" marker-end="url(#har)"/><rect class="fbx" x="95" y="288" width="96" height="24" rx="12"/><text x="143" y="304" font-size="11" text-anchor="middle">Кінець</text></g>
+ </g>
+ <g class="h-con" style="animation-delay:2s">
+  <rect class="term" x="282" y="152" width="226" height="206" rx="13" filter="url(#hsh)"/>
+  <path class="tbar" d="M282 165a13 13 0 0 1 13-13h200a13 13 0 0 1 13 13v11h-226z"/>
+  <circle cx="297" cy="164" r="3.5" fill="#ef8f8f"/><circle cx="308" cy="164" r="3.5" fill="#f3c97a"/><circle cx="319" cy="164" r="3.5" fill="#8fd1bd"/>
+  <text x="332" y="167.5" font-size="10" fill="#9a9caf">IDLE Shell</text>
+  <text class="mono sm ol" style="animation-delay:2.35s" x="296" y="200"><tspan class="tpr">&gt;&gt;&gt; </tspan><tspan class="tt1">n = 7</tspan></text>
+  <text class="mono sm ol" style="animation-delay:2.75s" x="296" y="221"><tspan class="tpr">&gt;&gt;&gt; </tspan><tspan class="tt1">n % 2</tspan></text>
+  <text class="mono sm ol tt2" style="animation-delay:3.05s" x="296" y="240">1</text>
+  <text class="mono sm ol" style="animation-delay:3.4s" x="296" y="261"><tspan class="tpr">&gt;&gt;&gt; </tspan><tspan class="tt1">n % 2 == 0</tspan></text>
+  <text class="mono sm ol tt2" style="animation-delay:3.7s" x="296" y="280">False</text>
+  <text class="mono sm ol" style="animation-delay:4.05s" x="296" y="301"><tspan class="tpr">&gt;&gt;&gt; </tspan><tspan class="tt1">print(</tspan><tspan class="tt3">"непарне"</tspan><tspan class="tt1">)</tspan></text>
+  <text class="mono sm ol tt1" style="animation-delay:4.35s" x="296" y="320">непарне</text>
+  <text class="mono sm ol" style="animation-delay:4.55s" x="296" y="341"><tspan class="tpr">&gt;&gt;&gt; </tspan><tspan fill="#e6e7ef">_</tspan></text>
+ </g>
+ <g class="h-chip pp" style="animation-delay:4.75s">
+  <rect class="chip" x="300" y="34" width="150" height="42" rx="21"/>
+  <circle class="acf" cx="322" cy="55" r="13"/>
+  <path class="wt" d="M322 47.5l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7z"/>
+  <text x="342" y="53" font-size="13" font-weight="600">21 урок</text><text x="342" y="67" class="mu" font-size="10.5">7 клас · з нуля</text>
+ </g>
+ <g class="h-chip pp" style="animation-delay:4.85s">
+  <rect class="chip" x="300" y="88" width="150" height="30" rx="15"/>
+  <rect x="314" y="96" width="22" height="14" rx="3.5" class="kbd"/><text x="325" y="106.5" font-size="8.5" font-weight="700" text-anchor="middle">F5</text>
+  <text x="344" y="108" font-size="12.5" font-weight="600">IDLE і браузер</text>
+ </g>
+ <g class="h-chip pp" style="animation-delay:4.95s">
+  <rect class="chip" x="22" y="346" width="200" height="32" rx="16"/>
+  <circle class="okf" cx="42" cy="362" r="9"/><path d="M37.5 362l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="58" y="366.5" font-size="12.5" font-weight="600">Автоперевірка завдань</text>
+ </g>
+</svg></div>
+ </section>
+ <section class="sec" id="program" aria-labelledby="ph"><h3 id="ph">Програма курсу</h3><p>Натисни на урок, щоб відкрити його.</p><div class="mods" id="mods"></div></section>
+ <section class="sec" id="quests" aria-labelledby="qh"><h3 id="qh">Підсумковий тест і квести</h3><p>Перевір себе після курсу.</p><div class="qs" id="qlist"></div></section>
+ <section class="sec" aria-label="Інші курси"><a class="card promo" id="promo" href="https://whyuxavier.github.io/learn-web/" target="_blank" rel="noopener noreferrer">
+  <span class="pi"><svg viewBox="0 0 64 64"><defs><linearGradient id="pwg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b7fd0"/><stop offset="1" stop-color="#7ea6d8"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#pwg)"/><path d="M25 27l-9 8 9 8M39 27l9 8-9 8M35 24l-6 22" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span class="pt"><small>Можливо, ти також захочеш вивчити</small><b>Веб-програмування</b><span class="tags"><i>HTML</i><i>CSS</i><i>JavaScript</i></span></span>
+  <span class="btn pr pgo">Відкрити курс<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+ </a></section>
+ <section class="sec" aria-labelledby="bh"><h3 id="bh">Бонус</h3><p>Інструменти для програмування та безкоштовні відеокурси з Python українською.</p><div class="hcards" id="bonus"></div></section>
+ <footer class="hf"><span>Python з нуля · 7 клас</span><a href="https://github.com/whyuxavier/learn-python-7" target="_blank" rel="noopener noreferrer">GitHub — whyuxavier/learn-python-7</a></footer>
+</div>
+</div>
+<div id="examv" aria-live="polite"></div>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mt"><div class="card mc">
+<button class="ib mx" id="mclose" aria-label="Закрити"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<h2 id="mt">Панель керування</h2>
+<div class="pset"><div class="prow"><span>Тема</span><div class="seg" id="theme" role="group" aria-label="Тема"></div></div>
+<div class="prow"><span>Розмір тексту</span><div class="seg" id="fsz" role="group" aria-label="Розмір тексту"><button type="button" data-v="1" aria-pressed="true">A</button><button type="button" data-v="1.15" aria-pressed="false" style="font-size:1.15em">A</button><button type="button" data-v="1.3" aria-pressed="false" style="font-size:1.3em">A</button></div></div>
+<label class="sw" style="margin-top:0"><span>Підказки в редакторі<small>Команди й параметри під час набору коду</small></span><input type="checkbox" id="acT" role="switch"></label><label class="sw"><span>Шкільний комп'ютер<small>Прогрес зникає після закриття браузера</small></span><input type="checkbox" id="schT" role="switch"></label></div>
+<div class="mode" hidden><h3>Мій прогрес</h3>
+<div class="row"><button class="btn" id="pSave"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Зберегти у файл</button><button class="btn" id="pLoad"><svg viewBox="0 0 24 24"><path d="M12 20V9M7 14l5-5 5 5M5 4h14"/></svg>Відкрити файл</button></div>
+<input type="file" id="pFile" accept=".json,application/json" hidden></div>
+<div class="mode" id="instM"><h3>Застосунок</h3><p id="instTx" style="margin:0 0 10px;font-size:14px;color:var(--mu)">Встанови курс на комп'ютер чи телефон: окреме вікно, значок на робочому столі й робота без інтернету.</p>
+<div class="row"><button class="btn pr" id="instGo"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 7v7M9 11l3 3 3-3M10.5 18.5h3"/></svg>Встановити застосунок</button></div></div>
+<details class="more pab"><summary>Про курс і правила</summary><p><b>Python — програмування з нуля, 7 клас.</b> 21 урок: алгоритми й середовище IDLE, змінні та типи даних, введення й виведення, обчислення, розгалуження, цикли, рядки, модулі, функції й графіка turtle. Наприкінці — підсумковий тест. Інший клас — кнопка «7 клас» угорі.</p><ul>
+<li>Проходь уроки по черзі: кожен спирається на попередні.</li>
+<li>Прочитай «Теорію», запусти приклади й пройди «Перевір себе».</li>
+<li>На вкладці «Завдання» напиши програму й натисни «Перевірити завдання» — курс запустить її з різними даними.</li>
+<li>Підказки відкриваються по черзі, а зразок розв'язку — після виконання всіх вимог.</li>
+<li>Завдання «Для тих, хто впорався швидко» — необов'язкові.</li>
+<li>Щоб здати роботу: ⋯ → «Здати роботу» → надішли посилання вчителю.</li>
+</ul><p>Курс працює в браузері й лише імітує деякі можливості IDLE (наприклад, вікно turtle). Код завжди можна завантажити як файл .py і запустити в IDLE.</p></details>
+<a class="btn gh" href="https://github.com/whyuxavier/learn-python-7" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.8 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.3l1.1-6.2L3 9.7l6.2-.9z"/></svg>Репозиторій на GitHub</a><p style="margin:12px 0 0;font-size:13px;color:var(--mu)">Створено з використанням ШІ.</p></div></div>
+<div class="modal" id="shm" hidden role="dialog" aria-modal="true" aria-labelledby="sht"><div class="card mc">
+<button class="ib mx" id="shclose" aria-label="Закрити"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<h2 id="sht">Здати роботу</h2>
+<p id="shl" class="shs"></p>
+<label class="fl" for="shn">Ім'я та прізвище</label>
+<input class="fi" id="shn" maxlength="60" autocomplete="name" placeholder="Наприклад: Леонід Каденюк">
+<label class="fl" for="shk">Клас</label>
+<input class="fi" id="shk" maxlength="10" autocomplete="off" list="shkl" placeholder="7-А">
+<datalist id="shkl"><option value="7-А"><option value="7-Б"><option value="7-В"><option value="7-Г"><option value="7-Д"></datalist>
+<button class="btn pr" id="shgo">Здати роботу</button>
+<div id="shres" hidden>
+<p class="shsc" id="shsc"></p>
+<input class="fi" id="shu" readonly aria-label="Посилання на роботу">
+<button class="btn pr" id="shcp">Копіювати посилання</button>
+<p class="shs"><b>Скопіюй посилання й надішли його своєму вчителю</b> — у Google Classroom або так, як він попросить. Якщо зміниш код — здай роботу ще раз.</p>
+</div></div></div>
+<div class="modal" id="insm" hidden role="dialog" aria-modal="true" aria-labelledby="inst"><div class="card mc ins">
+<button class="ib mx" id="insclose" aria-label="Закрити"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<h2 id="inst">Встановити застосунок</h2>
+<div id="insBody"></div>
+<p style="margin:12px 0 0;font-size:13px;color:var(--mu)">Після встановлення курс відкривається з окремого значка й працює навіть без інтернету. Прогрес зберігається.</p>
+</div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="lessons.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
